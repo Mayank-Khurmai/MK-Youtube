@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>MK YouTube</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+
+    *{
+        box-sizing: border-box;
+    }  
+    *:focus{
+        outline: none;
+    }   
+    
+    body{
+        margin: 0px;
+        padding: 0px;
+        }
+    
+    #main-body-div{
+        width: 100%;
+        height: 100vh;
+        border-top: 20px groove red;
+        border-bottom: 20px groove red;
+    }
+
+    header{
+        width: 100%;
+        height: 75%;
+        background-image: url("images/demo.jpg");
+        background-size: cover;
+        border: 1px solid black;
+    }
+
+    footer{
+        width: 100%;
+        height: 25%;
+        background-image: url("images/footer.jpg");
+        background-size: cover;
+    }
+
+    #controls-div{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #progress{
+        width: 80%;
+        height: 7px;
+        position: absolute;
+        border-radius: 5px;
+        background-color: white;
+        top: 10%;
+    }
+
+    #progress-bar{
+        width: 60%;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    #playlist-main-div{
+        width: 100%;
+        height: 410px;
+        display: none;
+    }
+
+    #playlist-div{
+        width: 98%;
+        height: 100%;
+        background-color: whitesmoke;
+        margin-left: 1%;
+        overflow-y: scroll;
+        border-radius: 10px;
+        margin-right: 1%;
+    }
+
+    #playlist-search-div{
+        width: 96%;
+        height: 32px;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    #playlist-search-left-div{
+        width: 80%;
+        height: 30px;
+        float: left;
+    }
+
+    #playlist-search-right-div{
+        width: 20%;
+        height: 30px;
+        float: left;
+    }
+
+    #playlist-search-left-div input{
+        width: 98%;
+        height: 28px;
+        margin: 0px;
+        margin-top: 0px;
+        border-bottom: 2px ridge rgb(100, 96, 96);
+        box-shadow: darkgrey;
+        border-radius: 5px;
+    }
+
+    #playlist-search-right-div button{
+        width: 100%;
+        height: 28px;
+        border-radius: 5px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #more{
+        font-size: 50px;
+        margin-left: 50%;
+        margin-right: 50%;
+        transform: translate(-50%,-50%);
+        color: red;
+        position: absolute;
+        display: none;
+        z-index: 10;
+    }
+
+    #playlist-view-div{
+        width: 100%;
+        height: 200px;
+        background-color: chartreuse;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div id ="main-body-div">
+
+        <header>
+                <img src="images/upload.png" id="playlist-toggle-img" width="40" style="margin: 3%; margin-bottom: 0px;"> 
+                <div id="playlist-main-div">
+                        <div id="playlist-search-div">
+                            <div id="playlist-search-left-div">
+                                    <input type="search" id="stext">
+                            </div>
+                            <div id="playlist-search-right-div">
+                                    <button id="sbtn"><i class="fa fa-search" style="font-size: 20px;"></i></button>
+                            </div>
+                            
+                        </div>
+                        <div id="playlist-div"></div>
+                        <div style="background-color: black; border-radius: 50%;">
+                              <i class='fa fa-arrow-circle-down' id='more'></i>
+                        </div>
+                </div>      
+                <div id="playlist-view-div">
+                        <iframe width="100%" height="195" id="iframe">
+                        </iframe>
+                </div>  
+        </header>
+
+
+        <footer>
+
+
+            <div id="controls-div">
+                    <i class="fa fa-backward"  style="font-size: 35px; color: white;"></i>
+                    <div style="background-color: red; border-radius: 50%;">
+                            <i class="fa fa-play-circle" style="font-size: 50px; color: white;"></i>
+                    </div>                    
+                    <i class="fa fa-forward"  style="font-size: 35px; color: white;"></i>
+
+                    <div id="progress">
+                            <div id="progress-bar"></div>
+                    </div>
+
+            </div>
+
+            
+        </footer>
+
+    </div>
+
+</body>
+</html>
